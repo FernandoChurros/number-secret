@@ -1,6 +1,8 @@
 const inputNumber = document.querySelector('#inputNumber');
 const btn = document.querySelector('#btn');
 const tentatives = document.querySelector('#tentatives');
+const resultDiv = document.querySelector('#resultDiv');
+const p = document.createElement('p');
 let chances = 10;
 
 function raffleNumber() {
@@ -10,28 +12,44 @@ function raffleNumber() {
 }
 let numberSecret = raffleNumber();
 
+function showResult(result) {
+   p.textContent = result;
+   resultDiv.appendChild(p);
+}
+
 function validation() {
    if (chances > 0) {
       if (inputNumber.value == numberSecret) {
-
-         console.log('acertou');
-         raffleNumber();
-         chances = 10;
-         tentatives.textContent = chances;
+         win();
       } else {
-
-         console.log('Errou');
-         chances--;
-         tentatives.textContent = chances;
+         lose();
       }
 
       inputNumber.value = '';
    } else {
-
-      alert('Suas chances acabaram, o número agora é outro')
-      raffleNumber();
-      chances = 10;
-      tentatives.textContent = chances;
+      endTentatives(); 
    }
 }
+
+function win() {
+   showResult('Acertou');
+   numberSecret = raffleNumber();
+   chances = 10;
+   tentatives.textContent = chances;
+}
+
+function lose() {
+   showResult('Errou');
+   chances--;
+   tentatives.textContent = chances;
+}
+
+function endTentatives() {
+
+   alert('Suas chances acabaram, o número agora é outro')
+   numberSecret = raffleNumber();
+   chances = 10;
+   tentatives.textContent = chances;
+}
+
 btn.addEventListener('click', validation)
