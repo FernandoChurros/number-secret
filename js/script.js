@@ -46,10 +46,24 @@ function lose() {
 
 function endTentatives() {
 
-   alert('Suas chances acabaram, o número agora é outro')
+   endTentativesPopUp()
+   console.log('Suas chances acabaram, o número agora é outro')
    numberSecret = raffleNumber();
    chances = 10;
    tentatives.textContent = chances;
+}
+
+// CREATE POP UP FOR END TENTATIVE.
+const div = document.createElement('div');
+div.classList.add('pop_up_end_tentatives')
+const h1 = document.createElement('h1');
+h1.classList.add('title_end_tentatives')
+
+function endTentativesPopUp() {
+   document.body.appendChild(div);
+   h1.textContent = 'Suas tentativas acabaram, o número será resorteado';
+   div.appendChild(h1);
+   document.querySelector('.body').style.opacity = .3;
 }
 
 btn.addEventListener('click', validation)
