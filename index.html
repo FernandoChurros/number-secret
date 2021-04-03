@@ -10,27 +10,30 @@
    <script defer src="./js/script.js"></script>
 
    <link rel="stylesheet" href="./css/base.css">
+   <link rel="stylesheet" href="./css/container.css">
    <link rel="stylesheet" href="./css/popup.css">
    <link rel="stylesheet" href="./css/game.css">
 </head>
 <body>
-   <section class="game">
+   <section class="game container">
       <div>
          <h1 class="title_game">Number Secret</h1>
-         <p class="paragraph_game">Choice a number between 1 and 100, you have <span id="tentatives">10</span> tentatives</p>
+         <p class="paragraph_game">Choice a number between 1 and 100, you have <span id="tentatives" class="letter">10</span> tentatives</p>
       </div>
 
       <input id="inputNumber" class="number_game" type="number">
-      <button id="btn" class="btn_game"type="button">Play</button>
+      <button id="btn" class="btn btn_game"type="button">Play</button>
 
       <div id="resultDiv"></div>
    </section>
 
-   <div class="popup">
-      <h1 class="title_popup">You lost</h1>
-      <p class="paragraph_popup">We will raffle the secret number again</p>
+   <div class="popup container">
+      <div>
+         <h2 class="title_popup">You lost</h2>
+         <p class="paragraph_popup">We will raffle the secret number again</p>
+      </div>
 
-      <button class="btn_close">Play Again</button>
+      <button class="btn btn_close">Play Again</button>
    </div>
 </body>
 </html>

@@ -1,20 +1,7 @@
 .popup {
-   display: none;
-   background-color: #fff;
-   border: 1px solid #000;
-   border-radius: 10px;
-   text-align: center;
-   font-size: 2rem;
-   padding: 1rem;
+   background-color: var(--base-two);
    width: 75vw;
-   height: 75vh;
-
-   position: absolute;
-   top: 0;
-   bottom: 0;
-   left: 0;
-   right: 0;
-   margin: auto;
+   height: 50vh;
 }
 
 .btn_close {

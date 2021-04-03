@@ -36,7 +36,7 @@ function hit() {
    h1.textContent = 'You Won';
    const p = document.querySelector('.paragraph_popup');
    p.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
-   document.querySelector('.popup').style.display = 'block'
+   document.querySelector('.popup').style.display = 'flex'
 }
 
 function lose() {
@@ -45,7 +45,7 @@ function lose() {
    tentatives.textContent = chances;
 
    if (chances == 0) {
-      document.querySelector('.popup').style.display = 'block'
+      document.querySelector('.popup').style.display = 'flex'
       endTentatives();
    }
 }

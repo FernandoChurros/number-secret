@@ -1,5 +1,6 @@
 :root {
    --base: hsla(210,50%,13%, .5);
+   --base-two: hsla(210,50%,13%, .9);
    --first: #F0F1F5;
    --second: #FC575E;
 }
@@ -16,4 +17,18 @@ input, button {
 
 button {
    cursor: pointer;
+}
+
+h1, h2 {
+   font-size: 2rem;
+   margin-bottom: 1.5rem;
+}
+
+h2 {
+   font-size: 4rem;
+}
+
+p {
+   font-size: 1.1rem;
+   line-height: 2;
 }
