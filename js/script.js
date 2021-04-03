@@ -17,25 +17,26 @@ function validation() {
          win();
       } else {
          lose();
-      }
+ Y     }
 
       inputNumber.value = '';
    }
 
 function win() {
 
+   hit();
+
    numberSecret = raffleNumber();
    chances = 10;
    tentatives.textContent = chances;
-
-   hit();
 }
 
+const h2 = document.querySelector('.title_popup');
+const paragraph = document.querySelector('.paragraph_popup');
+
 function hit() {
-   const h1 = document.querySelector('.title_popup');
-   h1.textContent = 'You Won';
-   const p = document.querySelector('.paragraph_popup');
-   p.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
+   h2.textContent = 'You Won';
+   paragraph.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
    document.querySelector('.popup').style.display = 'flex'
 }
 
@@ -45,12 +46,16 @@ function lose() {
    tentatives.textContent = chances;
 
    if (chances == 0) {
-      document.querySelector('.popup').style.display = 'flex'
+
       endTentatives();
    }
 }
 
 function endTentatives() {
+
+      h2.textContent = 'You lost';
+      paragraph.textContent = 'We will raffle the secret number again';
+      document.querySelector('.popup').style.display = 'flex'
 
       numberSecret = raffleNumber();
       chances = 10;
