@@ -1,4 +1,5 @@
 .popup {
+   display: none;
    background-color: var(--base-two);
    width: 75vw;
    height: 50vh;
