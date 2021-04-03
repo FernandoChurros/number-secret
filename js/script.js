@@ -32,6 +32,15 @@ function win() {
    numberSecret = raffleNumber();
    chances = 10;
    tentatives.textContent = chances;
+
+   hit();
+}
+
+function hit() {
+   
+   document.querySelector('.title_popup').textContent = 'You Won';
+   document.querySelector('.paragraph_popup').textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
+   document.querySelector('.popup').style.display = 'block'
 }
 
 function lose() {
