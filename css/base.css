@@ -3,9 +3,11 @@
    --first: #F0F1F5;
    --second: #FC575E;
 }
-
+* { margin: 0; padding: 0; border: none; }
 body {
    background: url('../assets/pexels-igor-haritanovich-1687341.jpg') no-repeat center/cover;
+   width: 100vw;
+   height: 100vh;
 }
 
 input, button {
@@ -13,6 +15,5 @@ input, button {
 }
 
 button {
-   border: none;
    cursor: pointer;
 }
