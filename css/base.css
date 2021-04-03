@@ -1,0 +1,18 @@
+:root {
+   --base: hsla(210,50%,13%, .5);
+   --first: #F0F1F5;
+   --second: #FC575E;
+}
+
+body {
+   background: url('../assets/pexels-igor-haritanovich-1687341.jpg') no-repeat center/cover;
+}
+
+input, button {
+   box-sizing: border-box;
+}
+
+button {
+   border: none;
+   cursor: pointer;
+}

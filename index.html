@@ -9,18 +9,22 @@
 
    <script defer src="./js/script.js"></script>
 
+   <link rel="stylesheet" href="./css/base.css">
    <link rel="stylesheet" href="./css/popup.css">
+   <link rel="stylesheet" href="./css/game.css">
 </head>
 <body >
-   <div class="body">
-      <h1>Number Secret</h1>
-      <p>Choice a number between 1 and 100, you have <span id="tentatives">10</span> tentatives</p>
+   <section class="game">
+      <div>
+         <h1 class="title_game">Number Secret</h1>
+         <p class="paragraph_game">Choice a number between 1 and 100, you have <span id="tentatives">10</span> tentatives</p>
+      </div>
 
-      <input id="inputNumber" type="number">
-      <button id="btn" type="button">Play</button>
+      <input id="inputNumber" class="number_game" type="number">
+      <button id="btn" class="btn_game"type="button">Play</button>
 
       <div id="resultDiv"></div>
-   </div>
+   </section>
 
    <div class="popup">
       <h1 class="title_popup">You lost</h1>
