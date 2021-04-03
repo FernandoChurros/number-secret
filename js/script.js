@@ -10,12 +10,7 @@ function raffleNumber() {
    console.log(numberSecret);
    return numberSecret;
 }
-let numberSecret = raffleNumber();
-
-function showResult(result) {
-   p.textContent = result;
-   resultDiv.appendChild(p);
-}
+let numberSecret = raffleNumber();  
 
 function validation() {
       if (inputNumber.value == numberSecret) {
@@ -28,7 +23,7 @@ function validation() {
    }
 
 function win() {
-   showResult('Acertou');
+
    numberSecret = raffleNumber();
    chances = 10;
    tentatives.textContent = chances;
@@ -37,14 +32,15 @@ function win() {
 }
 
 function hit() {
-   
-   document.querySelector('.title_popup').textContent = 'You Won';
-   document.querySelector('.paragraph_popup').textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
+   const h1 = document.querySelector('.title_popup');
+   h1.textContent = 'You Won';
+   const p = document.querySelector('.paragraph_popup');
+   p.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
    document.querySelector('.popup').style.display = 'block'
 }
 
 function lose() {
-   showResult('Errou');
+
    chances--;
    tentatives.textContent = chances;
 
