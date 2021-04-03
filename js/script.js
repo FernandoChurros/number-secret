@@ -18,7 +18,6 @@ function showResult(result) {
 }
 
 function validation() {
-   if (chances > 0) {
       if (inputNumber.value == numberSecret) {
          win();
       } else {
@@ -26,10 +25,7 @@ function validation() {
       }
 
       inputNumber.value = '';
-   } else {
-      endTentatives(); 
    }
-}
 
 function win() {
    showResult('Acertou');
@@ -42,28 +38,23 @@ function lose() {
    showResult('Errou');
    chances--;
    tentatives.textContent = chances;
+
+   if (chances == 0) {
+      document.querySelector('.popup').style.display = 'block'
+      endTentatives();
+   }
 }
 
 function endTentatives() {
 
-   endTentativesPopUp()
-   console.log('Suas chances acabaram, o número agora é outro')
-   numberSecret = raffleNumber();
-   chances = 10;
-   tentatives.textContent = chances;
+      numberSecret = raffleNumber();
+      chances = 10;
+      tentatives.textContent = chances;
 }
 
-// CREATE POP UP FOR END TENTATIVE.
-const div = document.createElement('div');
-div.classList.add('pop_up_end_tentatives')
-const h1 = document.createElement('h1');
-h1.classList.add('title_end_tentatives')
-
-function endTentativesPopUp() {
-   document.body.appendChild(div);
-   h1.textContent = 'Suas tentativas acabaram, o número será resorteado';
-   div.appendChild(h1);
-   document.querySelector('.body').style.opacity = .3;
+const btnClose = document.querySelector('.btn_close');
+function closePopUp() {
+   document.querySelector('.popup').style.display = 'none';
 }
-
-btn.addEventListener('click', validation)
+btnClose.addEventListener('click', closePopUp);
+btn.addEventListener('click', validation);
