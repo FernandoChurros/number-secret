@@ -15,15 +15,25 @@ function raffleNumber() {
    return numberSecret;
 }
 
-let numberSecret = raffleNumber();  
+function reRaffleNumber() {
+
+   numberSecret = raffleNumber();
+   chances = 10;
+   tentatives.textContent = chances;
+}
+
+let numberSecret = raffleNumber();
 
 function validation() {
    if(inputNumber.value == '') {
       invalid();
    } else {
       if (inputNumber.value == numberSecret) {
-         win();
+
+         hit();
+         reRaffleNumber();
       } else {
+
          lose();
       }
 
@@ -31,27 +41,21 @@ function validation() {
    inputNumber.value = '';
 }
 
-function invalid() {
+function showWarnings(warning, phrase, display) {
 
-   console.log('Insira um número válido senhor');
-   h2.textContent = 'WARNING!';
-   paragraph.textContent = 'The machine does not recognize what you are typing';
-   popup.style.display = 'flex';
+   h2.textContent = warning;
+   paragraph.textContent = phrase;
+   popup.style.display = display;
 }
 
-function win() {
+function invalid() {
 
-   hit();
-
-   numberSecret = raffleNumber();
-   chances = 10;
-   tentatives.textContent = chances;
+   showWarnings('WARNING!', 'The machine does not recognize what you are typing', 'flex');
 }
 
 function hit() {
-   h2.textContent = 'You Won';
-   paragraph.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
-   popup.style.display = 'flex'
+
+   showWarnings('You Won', "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations", 'flex');
 }
 
 function lose() {
@@ -67,13 +71,8 @@ function lose() {
 
 function endTentatives() {
 
-      h2.textContent = 'You lost';
-      paragraph.textContent = 'We will raffle the secret number again';
-      popup.style.display = 'flex'
-
-      numberSecret = raffleNumber();
-      chances = 10;
-      tentatives.textContent = chances;
+   showWarnings('You lost', 'We will raffle the secret number again', 'flex');   
+   reRaffleNumber();
 }
 
 function closePopUp() {
