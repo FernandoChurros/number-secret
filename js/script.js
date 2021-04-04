@@ -1,7 +1,9 @@
 const inputNumber = document.querySelector('#inputNumber');
 const btn = document.querySelector('#btn');
+const btnTip = document.querySelector('#tip');
 const tentatives = document.querySelector('#tentatives');
 const popup = document.querySelector('.popup');
+const p = document.createElement('p');
 let chances = 10;
 
 const h2 = document.querySelector('.title_popup');
@@ -13,6 +15,7 @@ function raffleNumber() {
    console.log(numberSecret);
    return numberSecret;
 }
+
 let numberSecret = raffleNumber();  
 
 function validation() {
@@ -46,7 +49,6 @@ function win() {
    tentatives.textContent = chances;
 }
 
-
 function hit() {
    h2.textContent = 'You Won';
    paragraph.textContent = "My mental CPU with an IQ of 530 thousand, comes to just one conclusion, you won the machine, Congratulations"
@@ -76,7 +78,41 @@ function endTentatives() {
 }
 
 function closePopUp() {
+
    document.querySelector('.popup').style.display = 'none';
 }
+
+const divResult = document.createElement('div');
+divResult.classList.add('none');
+divResult.setAttribute('id', 'tipResult');
+const helpGame = document.querySelector('.help_game');
+
+
+function tip() {
+
+   helpGame.appendChild(divResult);
+   document.querySelector('#tipResult').classList.toggle('tip_result');
+
+   let divisor = 0;
+   for (let i = 1; i <= numberSecret; i++) {
+      if (numberSecret % i == 0)
+         divisor++
+   }
+
+   if (divisor == 2 && numberSecret < 42) {
+
+      console.log('É o filho mais novo do seu tio!');
+   } else if (divisor == 2) {
+
+      console.log('Não é um filho mais velho do seu tio!');
+   }else if (numberSecret >= 42) {
+      console.log('Seu tio não teve nenhum filho mais velho!');
+   } else {
+      console.log('Seu tio não teve nenhum filho mais novo!')
+   }
+
+}
+
+btnTip.addEventListener('click', tip);
 btnClose.addEventListener('click', closePopUp);
 btn.addEventListener('click', validation);

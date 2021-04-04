@@ -20,3 +20,20 @@
    right: 0;
    margin: auto;
 }
+
+.btn {
+   background-color: var(--second);
+   border-radius: 5px;
+   color: var(--first);
+   text-shadow: 1px 1px 1px var(--base);
+   width: 80%;
+   padding: 1rem 0;
+   font-size: 1.3rem;
+   letter-spacing: .3rem;
+
+   transition: transform 30ms linear;
+}
+
+.btn:active {
+   transform: scale(.95);
+}
