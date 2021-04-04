@@ -13,14 +13,18 @@ function raffleNumber() {
 let numberSecret = raffleNumber();  
 
 function validation() {
+   if(inputNumber.value == '') {
+      console.log('Insira um número válido senhor')
+   } else {
       if (inputNumber.value == numberSecret) {
          win();
       } else {
          lose();
- Y     }
+      }
 
-      inputNumber.value = '';
    }
+   inputNumber.value = '';
+}
 
 function win() {
 
