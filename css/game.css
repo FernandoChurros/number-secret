@@ -52,3 +52,7 @@
    left: 100%;
    width: max-content;
 }
+
+.tip_paragraph {
+   width: 200px;
+}

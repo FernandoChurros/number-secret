@@ -3,7 +3,6 @@ const btn = document.querySelector('#btn');
 const btnTip = document.querySelector('#tip');
 const tentatives = document.querySelector('#tentatives');
 const popup = document.querySelector('.popup');
-const p = document.createElement('p');
 let chances = 10;
 
 const h2 = document.querySelector('.title_popup');
@@ -85,8 +84,9 @@ function closePopUp() {
 const divResult = document.createElement('div');
 divResult.classList.add('none');
 divResult.setAttribute('id', 'tipResult');
+const p = document.createElement('p');
+p.classList.add('tip_paragraph')
 const helpGame = document.querySelector('.help_game');
-
 
 function tip() {
 
@@ -101,16 +101,21 @@ function tip() {
 
    if (divisor == 2 && numberSecret < 42) {
 
-      console.log('É o filho mais novo do seu tio!');
+      p.textContent = 'É o filho mais novo do seu tio!';
+      divResult.appendChild(p);
    } else if (divisor == 2) {
 
-      console.log('Não é um filho mais velho do seu tio!');
+      p.textContent = 'Não é um filho mais velho do seu tio!';
+      divResult.appendChild(p);
    }else if (numberSecret >= 42) {
-      console.log('Seu tio não teve nenhum filho mais velho!');
-   } else {
-      console.log('Seu tio não teve nenhum filho mais novo!')
-   }
 
+      p.textContent = 'Seu tio não teve nenhum filho mais velho!';
+      divResult.appendChild(p);
+   } else {
+
+      p.textContent = 'Seu tio não teve nenhum filho mais novo!';
+      divResult.appendChild(p);
+   }
 }
 
 btnTip.addEventListener('click', tip);
