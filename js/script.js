@@ -104,15 +104,15 @@ function tip() {
       divResult.appendChild(p);
    } else if (divisor == 2) {
 
-      p.textContent = 'Não é um filho mais velho do seu tio!';
+      p.textContent = 'É o filho mais velho do seu tio!';
       divResult.appendChild(p);
    }else if (numberSecret >= 42) {
 
-      p.textContent = 'Seu tio não teve nenhum filho mais velho!';
+      p.textContent = 'Seu tio não teve filhos, ele é muito novo!';
       divResult.appendChild(p);
    } else {
 
-      p.textContent = 'Seu tio não teve nenhum filho mais novo!';
+      p.textContent = 'Seu tio não teve filhos, ele está muito velho!';
       divResult.appendChild(p);
    }
 }
