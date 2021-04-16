@@ -38,7 +38,17 @@
 }
 
 .none {
-   display: none;   
+   background-color: var(--base-two);
+   border: 2px solid var(--second);
+   border-radius: 5px;
+   padding: .5rem;
+
+   display: block;
+   position: absolute;
+   left: 100%;
+   width: max-content;
+   visibility: hidden;
+   opacity: 0;
 }
 
 .tip_result {
@@ -51,6 +61,9 @@
    position: absolute;
    left: 100%;
    width: max-content;
+   opacity: 1;
+   visibility: visible;
+   transition: visibility 500ms linear, opacity 200ms linear;
 }
 
 .tip_paragraph {
